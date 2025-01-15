@@ -13,8 +13,10 @@ def get_requirements() -> List[str]:
     requirements: List[str] = []
     try:
         with open('requirements.txt', 'r') as file:
+            # process each line
             for line in file:
                 requirement = line.strip()
+                #ignore empty lines and -e.
                 if requirement and requirement != '-e .':
                     requirements.append(requirement)
     except FileNotFoundError:
