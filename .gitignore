@@ -1,3 +1,5 @@
 netsec_env
 .env
 .DS_Store
+.artifact
+.log

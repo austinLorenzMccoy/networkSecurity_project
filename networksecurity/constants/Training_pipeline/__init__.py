@@ -44,3 +44,14 @@ DATA_VALIDATION_TEST_FILE_NAME: str = "test.csv"
 """
 Data Transformation related constant start with DATA_TRANSFORMATION VAR NAME
 """
+DATA_TRANSFORMATION_DIR_NAME: str = "data_transformation"
+DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR: str = "transformed_data"
+DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR_NAME: str = "transformed_object"
+PREPROCSSING_OBJECT_DIR_NAME: str = "preprocessing_object"  # Added constant
+PREPROCESSING_TRANSFORMED_OBJECT_FILE_NAME: str = "transformed_object.pkl"  # Added constant
+
+# knn imputer to replace nan values
+DATA_TRANSFORMATION_IMPUTER_PARAMS: dict = {
+    "n_neighbors": 3,
+    "weights": "uniform"
+}
