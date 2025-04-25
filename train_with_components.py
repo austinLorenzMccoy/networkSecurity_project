@@ -236,9 +236,14 @@ def train_model():
                 mlflow.log_metric("test_recall", model_trainer_artifact.test_metric_artifact.recallScore)
                 
                 # Log model
-                trained_model = model_trainer.train_model(
-                    *model_trainer.initiate_model_trainer().__dict__.values()
+                # Get the training data
+                train_arr = load_numpy_array_data(
+                    data_transformation_artifact.transformed_train_file_path
                 )
+                x_train, y_train = train_arr[:, :-1], train_arr[:, -1]
+                
+                # Train a new model for MLflow logging
+                trained_model = model_trainer.train_model(x_train, y_train)
                 
                 mlflow.sklearn.log_model(
                     sk_model=trained_model,
