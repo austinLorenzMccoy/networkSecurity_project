@@ -8,7 +8,7 @@ import pandas as pd
 """
 defining common constant variable for training pipeline
 """
-TARGET_COLUMN = "text"
+TARGET_COLUMN = "target"
 PIPELINE_NAME: str = "networksecurity"
 ARTIFACT_DIR: str = os.path.join(os.getcwd(), "artifact")
 FILE_NAME: str = "cyber_threat_intelligence_train.csv"
@@ -17,6 +17,9 @@ TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
 
 SCHEMA_FILE_PATH = os.path.join("data_schema", "schema.yaml")
+
+SAVED_MODEL_DIR = os.path.join("saved_models")
+MODEL_FILE_NAME = "model.pkl"
 
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME
@@ -50,8 +53,24 @@ DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR_NAME: str = "transformed_object"
 PREPROCSSING_OBJECT_DIR_NAME: str = "preprocessing_object"  # Added constant
 PREPROCESSING_TRANSFORMED_OBJECT_FILE_NAME: str = "transformed_object.pkl"  # Added constant
 
-# knn imputer to replace nan values
+# knn  to replace nan values
 DATA_TRANSFORMATION_IMPUTER_PARAMS: dict = {
     "n_neighbors": 3,
     "weights": "uniform"
 }
+
+DATA_VALIDATION_TRAIN_FILE_PATH: str = "train.npz"
+DATA_VALIDATION_TEST_FILE_PATH: str = "test.npz"
+
+"""
+Model Trainer related constant start with MODEL_TRAINER VAR NAME for XGboost
+"""
+MODEL_TRAINER_DIR_NAME: str = "model_trainer"
+MODEL_TRAINER_TRAINED_MODEL_DIR: str = "trained_model"
+MODEL_TRAINER_TRAINED_MODEL_NAME: str = "model.pkl"
+MODEL_TRAINER_EXPECTED_SCORE: float = 0.6
+MODEL_TRAINER_OVERFITTING_UNDERFITTING_THRESHOLD: float = 0.05
+
+"""
+Model Evaluation related constant start with MODEL_EVALUATION VAR NAME
+"""

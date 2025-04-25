@@ -7,5 +7,23 @@ pymongo[srv]==3.6
 scikit-learn
 dill
 pyaml
+xgboost
+imbalanced-learn
+dask
+pyarrow
+# DVC and MLflow integration
+dvc
+dvc-s3
+dvc-gdrive
+mlflow>=2.3.0
+dagshub
+pytest
+pytest-cov
+# FastAPI and dependencies
+fastapi>=0.95.0
+uvicorn>=0.22.0
+pydantic>=1.10.7
+starlette>=0.26.1
+python-multipart
 
 ## -e .    

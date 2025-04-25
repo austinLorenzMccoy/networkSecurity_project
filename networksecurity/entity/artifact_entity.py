@@ -1,3 +1,5 @@
+### NETWORKSECURITY/networksecurity/entity/artifact_entity.py
+
 from dataclasses import dataclass
 
 @dataclass
@@ -15,9 +17,20 @@ class DataValidationArtifact:
     invalid_test_file_path: str
     drift_report_file_path: str
 
-
 @dataclass
 class DataTransformationArtifact:
-    transformed_object_file_path: str
     transformed_train_file_path: str
     transformed_test_file_path: str
+    transformed_object_file_path: str
+
+@dataclass
+class ClassificationMetricArtifact:
+    f1Score: float
+    precisionScore: float
+    recallScore: float  
+
+@dataclass
+class ModelTrainerArtifact:
+    trained_model_file_path: str
+    train_metric_artifact: ClassificationMetricArtifact
+    test_metric_artifact: ClassificationMetricArtifact
