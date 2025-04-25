@@ -60,7 +60,7 @@ jobs:
     - name: Log metrics to DAGsHub
       run: |
         pip install dagshub
-        python -c "from dagshub import dagshub_logger; dagshub_logger(metrics_path='reports/metrics.json', hparams_path='reports/params.json')"
+        python -c "from dagshub import dagshub_logger; dagshub_logger(metrics_path='reports/direct_training_metrics.json')"
       env:
         DAGSHUB_USER: austinLorenzMccoy
         DAGSHUB_REPO: networkSecurity_project
