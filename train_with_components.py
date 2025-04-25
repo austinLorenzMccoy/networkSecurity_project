@@ -220,6 +220,9 @@ def train_model():
             mlflow.set_tracking_uri(mlflow_tracking_uri)
             mlflow.set_experiment("network-security-classification")
             
+            # Import the load_numpy_array_data function in this scope
+            from networksecurity.utils.main_utils import load_numpy_array_data
+            
             # Start a new MLflow run
             with mlflow.start_run():
                 # Log parameters
