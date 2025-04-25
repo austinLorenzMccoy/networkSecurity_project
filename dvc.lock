@@ -1,0 +1,35 @@
+schema: '2.0'
+stages:
+  direct_training:
+    cmd: python train_with_components.py
+    deps:
+    - path: Network_Data/cyber_threat_intelligence_train.csv
+      hash: md5
+      md5: 37d3f6852efbbd4a7f0ba42adfb43037
+      size: 2479785
+    - path: custom_model_trainer.py
+      hash: md5
+      md5: 0d76f5c5c39c978bfc9270cd0d44087e
+      size: 3342
+    - path: networksecurity/components/data_transformation.py
+      hash: md5
+      md5: d3ec0a8f3ab1c691823769b32a26354b
+      size: 3012
+    - path: networksecurity/components/model_trainer.py
+      hash: md5
+      md5: d158befc136285d16d4d08c8e1fad1c2
+      size: 2815
+    - path: train_with_components.py
+      hash: md5
+      md5: 924f70501ece56d296caa47d4c7c5fda
+      size: 13950
+    outs:
+    - path: artifact/direct_training
+      hash: md5
+      md5: 91a81ff7deb6190d780bd9380beb4c00.dir
+      size: 5170460
+      nfiles: 6
+    - path: reports/direct_training_metrics.json
+      hash: md5
+      md5: c24b9da56382aa8977270565a00fb921
+      size: 226
