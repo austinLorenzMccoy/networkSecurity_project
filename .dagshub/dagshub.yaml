@@ -1,0 +1,7 @@
+client:
+  dvc:
+    remote: origin
+    path: .
+  mlflow:
+    tracking_uri: https://dagshub.com/austinLorenzMccoy/networkSecurity_project.mlflow
+    experiment: network_security_classification

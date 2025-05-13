@@ -1,0 +1,12 @@
+feature,importance
+text_length,0.5995300734396037
+word_count,0.295634379104224
+contains_malware_word,0.019198682965337464
+contains_trojan,0.006467131848995545
+contains_virus,0.007635374594416828
+contains_ransomware,0.01450662438833356
+contains_attack,0.01867997978231607
+contains_threat,0.013494180020663469
+contains_vulnerability,0.00837473982053457
+contains_exploit,0.006920737265508551
+contains_security,0.009558096770066114
