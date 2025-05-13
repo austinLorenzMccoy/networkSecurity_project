@@ -60,3 +60,5 @@ coverage.xml
 
 # Logs
 *.log
+
+Network_Security.egg-info/

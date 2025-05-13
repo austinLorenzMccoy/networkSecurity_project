@@ -1,33 +1,31 @@
-FROM python:3.9-slim
+# Use a lightweight Python image
+FROM python:slim
 
+# Set environment variables to prevent Python from writing .pyc files & Ensure Python output is not buffered
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# Set the working directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+# Install system dependencies required by Random Forest
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first to leverage Docker cache
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the application
+# Copy the application code
 COPY . .
 
-# Install the package in development mode
-RUN pip install -e .
+# Install the package in editable mode
+RUN pip install --no-cache-dir -e .
 
-# Set environment variables
-ENV PYTHONPATH=/app
-ENV PYTHONUNBUFFERED=1
+# Train the model before running the application
+RUN python pipeline/training_pipeline.py
 
-# Expose ports for FastAPI and MLflow UI
-EXPOSE 8000
+# Expose the port that Flask will run on
 EXPOSE 5000
 
-# Command to run when container starts
-# Use uvicorn to serve the FastAPI application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Command to run the app
+CMD ["python", "application.py"]
