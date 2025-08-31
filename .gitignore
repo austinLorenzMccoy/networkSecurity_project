@@ -63,3 +63,10 @@ coverage.xml
 *.log
 
 Network_Security.egg-info/
+
+# Node / Next.js (frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+frontend/.vercel/
