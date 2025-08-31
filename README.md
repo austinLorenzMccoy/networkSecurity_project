@@ -189,6 +189,35 @@ curl -X POST "http://localhost:8000/predict/text" \
   -d '{"text": "A new ransomware attack has been detected that encrypts files."}'
 ```
 
+## 🖥️ Frontend (Next.js) Dashboard
+
+The repository includes a Next.js-based dashboard under `frontend/`.
+
+### Prerequisites
+
+- Node.js 20+ (recommended)
+- pnpm (via corepack or standalone install)
+
+### Run locally
+
+```bash
+# From repo root
+cd frontend
+
+# Option A: Use corepack to manage pnpm
+corepack enable
+corepack prepare pnpm@9 --activate
+
+# Option B: Install pnpm directly
+npm i -g pnpm@9
+
+# Install and run
+pnpm install
+pnpm dev
+```
+
+The dev server will print the local URL (typically http://localhost:3000).
+
 ## 📁 Project Structure
 
 ```
@@ -229,11 +258,12 @@ curl -X POST "http://localhost:8000/predict/text" \
 
 ## 🔄 CI/CD Integration
 
-The project is set up with GitHub Actions for CI/CD:
+This repo uses GitHub Actions for CI:
 
-- **Continuous Integration**: Automated testing on pull requests
-- **Continuous Deployment**: Automatic model training and evaluation
-- **DVC and MLflow Integration**: Track experiments and data versions
+- **Backend CI** (`.github/workflows/backend.yml`): sets up Python venv, installs dependencies, and runs tests.
+- **Frontend CI** (`.github/workflows/frontend.yml`): sets up Node/pnpm and builds the Next.js app in `frontend/`.
+
+Note: Previous Jenkins configuration is deprecated. If you still have `backend/Jenkinsfile`, you can remove it.
 
 ## 📝 License
 

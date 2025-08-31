@@ -1,0 +1,6 @@
+Collecting pymongo
+  Using cached pymongo-4.10.1-cp310-cp310-macosx_10_9_x86_64.whl.metadata (22 kB)
+Requirement already satisfied: dnspython<3.0.0,>=1.16.0 in ./netsec_env/lib/python3.10/site-packages (from pymongo) (1.16.0)
+Using cached pymongo-4.10.1-cp310-cp310-macosx_10_9_x86_64.whl (835 kB)
+Installing collected packages: pymongo
+Successfully installed pymongo-4.10.1

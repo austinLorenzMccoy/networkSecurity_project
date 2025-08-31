@@ -4,6 +4,7 @@ venv/
 env/
 .env
 .venv
+docs/
 
 # Python artifacts
 __pycache__/
