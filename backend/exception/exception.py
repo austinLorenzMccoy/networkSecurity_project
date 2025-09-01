@@ -1,5 +1,6 @@
 import sys
-from logging.logger import logger
+import logging
+logger = logging.getLogger("networksecurity")
 
 class NetworkSecurityException(Exception):
     def __init__(self, error_message, error_details: sys):
