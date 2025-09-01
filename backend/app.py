@@ -14,7 +14,7 @@ import uvicorn
 from contextlib import asynccontextmanager
 
 from exception.exception import NetworkSecurityException
-from logging.logger import logging
+import logging
 from utils.main_utils import load_object
 
 # Define paths for model and preprocessor
