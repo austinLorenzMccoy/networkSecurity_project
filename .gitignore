@@ -18,7 +18,10 @@ dist/
 downloads/
 eggs/
 .eggs/
+# Python artifacts (avoid clobbering frontend/lib)
 lib/
+!frontend/lib/
+!frontend/lib/**
 lib64/
 parts/
 sdist/
