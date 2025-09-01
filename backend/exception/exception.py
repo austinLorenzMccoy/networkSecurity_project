@@ -1,6 +1,10 @@
 import sys
-import logging
-logger = logging.getLogger("networksecurity")
+try:
+    # Legacy custom logger path; may not exist in container
+    from logging.logger import logger  # type: ignore
+except Exception:
+    import logging
+    logger = logging.getLogger("networksecurity")
 
 class NetworkSecurityException(Exception):
     def __init__(self, error_message, error_details: sys):
